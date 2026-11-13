@@ -33,11 +33,11 @@ OUTPUT_DIR = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
 QUANTILES = [0.05, 0.25, 0.5, 0.75, 0.95]
 Z = [-1.644854, -0.674490, 0.0, 0.674490, 1.644854]
 # How much each level's spread is scaled: widen the two outer tails, keep the core at 1.
-TAIL_SCALE = [1.2, 1.0, 1.0, 1.0, 1.2]
+TAIL_SCALE = [1.25, 1.0, 1.0, 1.0, 1.25]
 
 # Sigma estimation knobs (fixed in advance, not tuned per case).
 SIGMA_PRIOR = 0.002      # prior spread in price units per sqrt-minute (the baseline's value).
-SIGMA_PRIOR_W = 0.25     # weight on the prior vs. the data estimate.
+SIGMA_PRIOR_W = 0.2      # weight on the prior vs. the data estimate.
 SIGMA_ALPHA = 0.3        # weight on the std vs. the robust (MAD) scale in the data estimate.
 SIGMA_FLOOR = 0.0005     # never forecast a narrower spread than this.
 RETURN_WINDOW = 240      # minutes of recent returns to estimate sigma from.
